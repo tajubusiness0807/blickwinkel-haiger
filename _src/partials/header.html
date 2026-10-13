@@ -1,0 +1,57 @@
+{{> icons}}
+<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+<a class="skip-link" href="#kontakt-footer">Zu Kontakt &amp; Öffnungszeiten</a>
+<header class="site-header" data-header>
+  <div class="container site-header__inner">
+    <a class="brand" href="index.html" aria-label="Blickwinkel – zur Startseite" data-eye-follow>{{> logo}}</a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="service.html" {{current:service}}>Service</a></li>
+        <li><a class="nav__link" href="sehanalyse.html" {{current:sehanalyse}}>Sehanalyse</a></li>
+        <li><a class="nav__link" href="brillenmode.html" {{current:brillenmode}}>Brillenmode</a></li>
+        <li><a class="nav__link" href="brillenglaeser.html" {{current:brillenglaeser}}>Brillengläser</a></li>
+        <li><a class="nav__link" href="kontaktlinsen.html" {{current:kontaktlinsen}}>Kontaktlinsen</a></li>
+        <li><a class="nav__link" href="sportbrillen.html" {{current:sportbrillen}}>Sportbrillen</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="status-pill" href="index.html#kontakt" data-status hidden>
+        <span class="status-pill__dot" aria-hidden="true"></span>
+        <span class="status-pill__text" data-status-text>Öffnungszeiten</span>
+      </a>
+      <a class="icon-btn" href="tel:{{site.phoneHref}}" aria-label="Anrufen: {{site.phone}}"><svg class="i"><use href="#i-phone"/></svg></a>
+      <button class="btn btn--yellow btn--sm header-cta" type="button" data-termin>
+        <svg class="i"><use href="#i-calendar"/></svg><span>Termin anfragen</span>
+      </button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+        <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span></span>
+        <span class="sr-only" data-menu-label>Menü öffnen</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu" data-menu aria-label="Menü" hidden>
+  <div class="menu__inner container">
+    <nav aria-label="Mobile Navigation">
+      <ul class="menu__list">
+        <li style="--i:0"><a href="index.html" {{current:home}}><span>Startseite</span></a></li>
+        <li style="--i:1"><a href="service.html" {{current:service}}><span>Service</span></a></li>
+        <li style="--i:2"><a href="sehanalyse.html" {{current:sehanalyse}}><span>Sehanalyse</span></a></li>
+        <li style="--i:3"><a href="brillenmode.html" {{current:brillenmode}}><span>Brillenmode</span></a></li>
+        <li style="--i:4"><a href="brillenglaeser.html" {{current:brillenglaeser}}><span>Brillengläser</span></a></li>
+        <li style="--i:5"><a href="kontaktlinsen.html" {{current:kontaktlinsen}}><span>Kontaktlinsen</span></a></li>
+        <li style="--i:6"><a href="sportbrillen.html" {{current:sportbrillen}}><span>Sportbrillen</span></a></li>
+      </ul>
+    </nav>
+    <div class="menu__aside">
+      <p class="menu__status" data-status-long>Öffnungszeiten werden geladen …</p>
+      <button class="btn btn--yellow btn--block" type="button" data-termin><svg class="i"><use href="#i-calendar"/></svg>Termin anfragen</button>
+      <div class="menu__contact">
+        <a href="tel:{{site.phoneHref}}"><svg class="i"><use href="#i-phone"/></svg>{{site.phone}}</a>
+        <a href="mailto:{{site.email}}"><svg class="i"><use href="#i-mail"/></svg>{{site.email}}</a>
+        <a href="{{site.mapsUrl}}" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>{{site.street}}, {{site.zip}} {{site.city}}</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<section class="section reviews section--dark" aria-labelledby="reviews-title">
+  <div class="container">
+    <div class="reviews__top">
+      <div class="section-head" style="margin:0">
+        <span class="eyebrow eyebrow--light" data-reveal>Das sagen unsere Kunden</span>
+        <h2 class="h2" id="reviews-title" data-reveal style="--i:1">Ehrliche Beratung, <em>die ankommt.</em></h2>
+      </div>
+      <div class="rating-big" data-reveal style="--i:2">
+        <span class="rating-big__num" data-count="4.9" data-decimals="1">{{site.rating}}</span>
+        <div>
+          <span class="stars stars--big stars--anim" aria-label="{{site.rating}} von 5 Sternen">
+            <svg class="i" style="--s:0"><use href="#i-star"/></svg><svg class="i" style="--s:1"><use href="#i-star"/></svg><svg class="i" style="--s:2"><use href="#i-star"/></svg><svg class="i" style="--s:3"><use href="#i-star"/></svg><svg class="i" style="--s:4"><use href="#i-star"/></svg>
+          </span>
+          <p class="muted" style="color:rgba(255,255,255,.7)">{{site.reviewCount}} Google-Rezensionen</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="reviews__viewport" data-reveal>
+    <div class="reviews__track" data-loop>
+      <figure class="review">
+        <svg class="i review__quote"><use href="#i-quote"/></svg>
+        <blockquote class="review__text">Ich war vor einiger Zeit dort um meine Augen überprüfen zu lassen. Da viel mir ein Schild für ein Augen Screening auf und ich habe nachgefragt, was das ist. Nach einer ausführlichen Erklärung habe ich das direkt mit gebucht und wurde dabei auch sehr gut betraten. Alle Mitarbeiter waren sehr nett und kompetent […] Mit dem Service bin ich sehr zufrieden und kann es nur weiterempfehlen.</blockquote>
+        <figcaption class="review__by"><span class="review__avatar" aria-hidden="true">NK</span><span><span class="review__name">Nils Konrad</span><br><span class="review__src">Google-Rezension</span></span></figcaption>
+      </figure>
+      <figure class="review">
+        <svg class="i review__quote"><use href="#i-quote"/></svg>
+        <blockquote class="review__text">Ich bin sehr zufrieden. Habe zeitnah einen Termin bekommen und der Sehtest war sehr ausführlich. Die Beratung war kompetent und ich musste nicht lange auf meine neuen Brillen warten. Sehr zu empfehlen und vielen Dank!</blockquote>
+        <figcaption class="review__by"><span class="review__avatar" aria-hidden="true" style="background:#c08a00">S</span><span><span class="review__name">Sandra</span><br><span class="review__src">Google-Rezension</span></span></figcaption>
+      </figure>
+      <figure class="review">
+        <svg class="i review__quote"><use href="#i-quote"/></svg>
+        <blockquote class="review__text">Super!!! Sehr nettes und absolut kompetentes Personal. Ich wurde sehr gut beraten, dazu wurde mein besonderes Sehproblem hervorragend gelöst. Endlich kann ich wieder total entspannt lesen. Ich kann mir nicht vorstellen wo anders hinzugehen.</blockquote>
+        <figcaption class="review__by"><span class="review__avatar" aria-hidden="true" style="background:#0f7a64">RF</span><span><span class="review__name">Ruth Freudenberger</span><br><span class="review__src">Google-Rezension</span></span></figcaption>
+      </figure>
+      <figure class="review">
+        <svg class="i review__quote"><use href="#i-quote"/></svg>
+        <blockquote class="review__text">Ich kaufe meine Brillen seit vielen Jahren bei Blickwinkel. Sehr gute Beratung, zuverlässig und kompetent.</blockquote>
+        <figcaption class="review__by"><span class="review__avatar" aria-hidden="true" style="background:#7a3fb5">TP</span><span><span class="review__name">Thomas Pfeiffer</span><br><span class="review__src">Google-Rezension</span></span></figcaption>
+      </figure>
+      <figure class="review">
+        <svg class="i review__quote"><use href="#i-quote"/></svg>
+        <blockquote class="review__text">Sehe freundliche und kompetente Beratung , mit der (Gleitsicht-)Brille bin ich auf Anhieb sehr zufrieden!</blockquote>
+        <figcaption class="review__by"><span class="review__avatar" aria-hidden="true" style="background:#b8452f">GW</span><span><span class="review__name">Gabi Wirth</span><br><span class="review__src">Google-Rezension</span></span></figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="container">
+    <div class="btn-row mt-3" data-reveal>
+      <a class="btn btn--yellow" href="{{site.googleReviewUrl}}" target="_blank" rel="noopener"><svg class="i"><use href="#i-star"/></svg>Jetzt bewerten</a>
+      <a class="btn btn--ghost-light" href="{{site.googleReviewsUrl}}" target="_blank" rel="noopener">Alle Rezensionen auf Google<svg class="i"><use href="#i-arrow-out"/></svg></a>
+    </div>
+  </div>
+</section>

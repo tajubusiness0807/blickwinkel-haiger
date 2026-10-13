@@ -1,0 +1,58 @@
+<footer class="site-footer" id="kontakt-footer">
+  <div class="site-footer__glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <a class="brand brand--footer" href="index.html" aria-label="Blickwinkel – zur Startseite">{{> logo}}</a>
+        <p class="site-footer__claim">Moderne Augenoptik &amp; Kontaktlinsen im Herzen von Haiger – am Herkules-Center.</p>
+        <div class="site-footer__rating">
+          <span class="stars" aria-hidden="true"><svg class="i"><use href="#i-star"/></svg><svg class="i"><use href="#i-star"/></svg><svg class="i"><use href="#i-star"/></svg><svg class="i"><use href="#i-star"/></svg><svg class="i"><use href="#i-star"/></svg></span>
+          <span><strong>{{site.rating}}</strong> bei {{site.reviewCount}} Google-Rezensionen</span>
+        </div>
+      </div>
+
+      <div class="site-footer__col">
+        <h2 class="site-footer__title">Kontakt</h2>
+        <address>
+          <strong>{{site.name}}</strong><br>
+          {{site.street}}<br>
+          {{site.zip}} {{site.city}}
+        </address>
+        <ul class="site-footer__links">
+          <li><a href="tel:{{site.phoneHref}}"><svg class="i"><use href="#i-phone"/></svg>{{site.phone}}</a></li>
+          <li><a href="mailto:{{site.email}}"><svg class="i"><use href="#i-mail"/></svg>{{site.email}}</a></li>
+          <li><a href="{{site.mapsUrl}}" target="_blank" rel="noopener"><svg class="i"><use href="#i-route"/></svg>Route planen</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__col">
+        <h2 class="site-footer__title">Öffnungszeiten</h2>
+        {{> hours}}
+        <p class="site-footer__status" data-status-long></p>
+      </div>
+
+      <div class="site-footer__col">
+        <h2 class="site-footer__title">Entdecken</h2>
+        <ul class="site-footer__links site-footer__links--plain">
+          <li><a href="service.html">Service</a></li>
+          <li><a href="sehanalyse.html">Sehanalyse</a></li>
+          <li><a href="brillenmode.html">Brillenmode</a></li>
+          <li><a href="brillenglaeser.html">Brillengläser</a></li>
+          <li><a href="kontaktlinsen.html">Kontaktlinsen</a></li>
+          <li><a href="sportbrillen.html">Sportbrillen</a></li>
+          <li><a href="index.html#karriere">Karriere</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>© {{site.year}} {{site.name}} · Inhaber {{site.owner}}</p>
+      <ul>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="barrierefreiheit.html">Barrierefreiheit</a></li>
+      </ul>
+      <button class="to-top" type="button" data-to-top aria-label="Nach oben"><svg class="i"><use href="#i-arrow"/></svg></button>
+    </div>
+  </div>
+</footer>

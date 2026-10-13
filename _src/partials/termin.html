@@ -1,0 +1,87 @@
+<dialog class="termin" data-termin-dialog aria-labelledby="termin-title">
+  <form class="termin__form" data-termin-form data-form-type="termin" novalidate>
+    <div class="termin__head">
+      <div class="termin__titles">
+        <p class="eyebrow eyebrow--blue">In 3 Schritten zum Wunschtermin</p>
+        <h2 class="termin__title" id="termin-title">Termin anfragen</h2>
+      </div>
+      <button class="icon-btn icon-btn--soft" type="button" data-termin-close aria-label="Dialog schließen"><svg class="i"><use href="#i-close"/></svg></button>
+      <ol class="termin__progress" aria-hidden="true"><li class="is-active"></li><li></li><li></li></ol>
+    </div>
+
+    <div class="termin__body">
+      <fieldset class="termin__step" data-step="1">
+        <legend class="termin__legend">Was können wir für Sie tun?</legend>
+        <div class="choice-grid">
+          <label class="choice"><input type="radio" name="anliegen" value="Sehanalyse &amp; Sehtest" data-key="sehanalyse" data-prep="Bringen Sie gerne Ihre aktuelle Brille und – falls vorhanden – Ihren Brillenpass mit." required><span class="choice__box"><svg class="i"><use href="#i-eye"/></svg><span>Sehanalyse &amp; Sehtest</span></span></label>
+          <label class="choice"><input type="radio" name="anliegen" value="Brillenberatung" data-key="brille" data-prep="Bringen Sie gerne Ihre aktuelle Brille und – falls vorhanden – Ihren Brillenpass mit."><span class="choice__box"><svg class="i"><use href="#i-glasses"/></svg><span>Brillen&shy;beratung</span></span></label>
+          <label class="choice"><input type="radio" name="anliegen" value="Gleitsichtbrille" data-key="gleitsicht" data-prep="Bringen Sie gerne Ihre aktuelle Brille und – falls vorhanden – Ihren Brillenpass mit."><span class="choice__box"><svg class="i"><use href="#i-layers"/></svg><span>Gleitsicht&shy;brille</span></span></label>
+          <label class="choice"><input type="radio" name="anliegen" value="Kontaktlinsen-Anpassung" data-key="kontaktlinsen" data-prep="Wenn Sie bereits Kontaktlinsen tragen, bringen Sie bitte Ihre Linsendaten oder die Verpackung mit."><span class="choice__box"><svg class="i"><use href="#i-lens"/></svg><span>Kontakt&shy;linsen</span></span></label>
+          <label class="choice"><input type="radio" name="anliegen" value="Sportbrille" data-key="sportbrille" data-prep="Erzählen Sie uns gerne vorab, für welche Sportart(en) Sie die Brille nutzen möchten."><span class="choice__box"><svg class="i"><use href="#i-mountain"/></svg><span>Sport&shy;brille</span></span></label>
+          <label class="choice"><input type="radio" name="anliegen" value="Führerschein-Sehtest" data-key="fuehrerschein" data-prep="Bitte bringen Sie einen gültigen Lichtbildausweis mit – und Ihre Brille bzw. Kontaktlinsen, falls Sie welche tragen."><span class="choice__box"><svg class="i"><use href="#i-car"/></svg><span>Führerschein-Sehtest</span></span></label>
+          <label class="choice"><input type="radio" name="anliegen" value="Brillen-Service / Reparatur" data-key="service" data-prep="Bringen Sie einfach Ihre Brille mit – wir schauen sie uns in unserer hauseigenen Werkstatt an."><span class="choice__box"><svg class="i"><use href="#i-wrench"/></svg><span>Service &amp; Reparatur</span></span></label>
+          <label class="choice"><input type="radio" name="anliegen" value="Sonstiges" data-key="sonstiges" data-prep="Beschreiben Sie Ihr Anliegen im letzten Schritt gerne kurz – wir bereiten uns darauf vor."><span class="choice__box"><svg class="i"><use href="#i-sparkle"/></svg><span>Etwas anderes</span></span></label>
+        </div>
+        <p class="termin__hint" data-prep-out hidden><svg class="i"><use href="#i-info"/></svg><span></span></p>
+        <p class="field-error" data-error-for="anliegen" hidden>Bitte wählen Sie ein Anliegen aus.</p>
+      </fieldset>
+
+      <fieldset class="termin__step" data-step="2" hidden>
+        <legend class="termin__legend">Wann passt es Ihnen?</legend>
+        <p class="termin__label" id="termin-date-label">Wunschtag</p>
+        <div class="date-strip" data-dates role="radiogroup" aria-labelledby="termin-date-label"></div>
+        <p class="termin__label" id="termin-time-label">Uhrzeit <span class="termin__label-note" data-slot-day></span></p>
+        <div class="slots" data-slots role="radiogroup" aria-labelledby="termin-time-label"></div>
+        <label class="check"><input type="checkbox" name="flexibel" value="ja" data-flex><span class="check__box" aria-hidden="true"><svg class="i"><use href="#i-check"/></svg></span><span>Ich bin zeitlich flexibel – bitte schlagen Sie mir einen Termin vor.</span></label>
+        <p class="field-error" data-error-for="datum" hidden>Bitte wählen Sie Tag und Uhrzeit – oder markieren Sie, dass Sie flexibel sind.</p>
+        <p class="termin__hint"><svg class="i"><use href="#i-info"/></svg><span>Ihr Wunschtermin ist zunächst eine Anfrage. Wir bestätigen ihn telefonisch oder per E-Mail.</span></p>
+      </fieldset>
+
+      <fieldset class="termin__step" data-step="3" hidden>
+        <legend class="termin__legend">Wie erreichen wir Sie?</legend>
+        <div class="field-grid">
+          <div class="field field--full">
+            <label for="t-name">Vor- und Nachname</label>
+            <input id="t-name" name="name" type="text" autocomplete="name" required maxlength="120">
+            <p class="field-error" data-error-for="name" hidden>Bitte geben Sie Ihren Namen an.</p>
+          </div>
+          <div class="field">
+            <label for="t-tel">Telefonnummer</label>
+            <input id="t-tel" name="telefon" type="tel" autocomplete="tel" inputmode="tel" required maxlength="40">
+            <p class="field-error" data-error-for="telefon" hidden>Bitte geben Sie eine Telefonnummer an.</p>
+          </div>
+          <div class="field">
+            <label for="t-mail">E-Mail-Adresse</label>
+            <input id="t-mail" name="email" type="email" autocomplete="email" required maxlength="160">
+            <p class="field-error" data-error-for="email" hidden>Bitte geben Sie eine gültige E-Mail-Adresse an.</p>
+          </div>
+          <div class="field field--full">
+            <label for="t-msg">Haben Sie einen besonderen Wunsch? <span class="optional">optional</span></label>
+            <textarea id="t-msg" name="nachricht" rows="3" maxlength="2000"></textarea>
+          </div>
+          <div class="hp" aria-hidden="true"><label for="t-web">Website</label><input id="t-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <label class="check field--full"><input type="checkbox" name="datenschutz" value="akzeptiert" required><span class="check__box" aria-hidden="true"><svg class="i"><use href="#i-check"/></svg></span><span>Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzbestimmungen</a> gelesen und akzeptiere sie.</span></label>
+          <p class="field-error field--full" data-error-for="datenschutz" hidden>Bitte bestätigen Sie die Datenschutzbestimmungen.</p>
+        </div>
+      </fieldset>
+
+      <div class="termin__step termin__done" data-step="4" hidden>
+        <div class="done-eye" aria-hidden="true">
+          <svg viewBox="0 0 120 120"><circle class="done-eye__ring" cx="60" cy="60" r="54"/><path class="done-eye__check" d="M38 62l15 15 30-32"/></svg>
+        </div>
+        <h3 class="termin__done-title" data-done-title>Danke für Ihre Termin-Anfrage!</h3>
+        <p data-done-text>Wir melden uns schnellstmöglich bei Ihnen.</p>
+        <p class="termin__done-summary" data-done-summary></p>
+        <a class="btn btn--blue" href="#" data-done-mail hidden><svg class="i"><use href="#i-mail"/></svg>E-Mail jetzt öffnen</a>
+        <p class="termin__done-alt">Lieber direkt sprechen? <a href="tel:{{site.phoneHref}}">{{site.phone}}</a></p>
+      </div>
+    </div>
+
+    <div class="termin__foot" data-termin-foot>
+      <button class="btn btn--text" type="button" data-termin-back hidden><svg class="i i--flip"><use href="#i-arrow"/></svg>Zurück</button>
+      <p class="termin__summary" data-summary aria-live="polite"></p>
+      <button class="btn btn--blue" type="button" data-termin-next>Weiter<svg class="i"><use href="#i-arrow"/></svg></button>
+      <button class="btn btn--yellow" type="submit" data-termin-submit hidden>Termin anfragen<svg class="i"><use href="#i-arrow"/></svg></button>
+    </div>
+  </form>
+</dialog>

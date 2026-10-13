@@ -1,0 +1,60 @@
+<section class="section section--paper2" id="kontakt" aria-labelledby="kontakt-title">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <div style="display:grid;gap:1rem">
+        <span class="eyebrow" data-reveal>Kontakt &amp; Anfahrt</span>
+        <h2 class="h2" id="kontakt-title" data-reveal style="--i:1">Wir freuen uns <em>auf Sie!</em></h2>
+      </div>
+      <p class="lead" data-reveal style="--i:2">Sie finden uns im Herzen von Haiger, direkt am Herkules-Center. Kommen Sie vorbei – oder vereinbaren Sie vorab Ihren Wunschtermin, damit wir uns ganz in Ruhe Zeit für Sie nehmen können.</p>
+    </div>
+    <div class="contact">
+      <div class="contact-card" data-reveal>
+        <p class="status-line" data-status-line><span class="status-pill__dot" aria-hidden="true"></span><span data-status-text>Öffnungszeiten</span></p>
+        <div class="contact-card__row">
+          <span class="contact-card__icon"><svg class="i"><use href="#i-pin"/></svg></span>
+          <div><p class="contact-card__label">Adresse</p><address><strong>{{site.name}}</strong><br>{{site.street}}<br>{{site.zip}} {{site.city}}</address></div>
+        </div>
+        <div class="contact-card__row">
+          <span class="contact-card__icon"><svg class="i"><use href="#i-phone"/></svg></span>
+          <div><p class="contact-card__label">Telefon &amp; E-Mail</p><a href="tel:{{site.phoneHref}}">{{site.phone}}</a><br><a href="mailto:{{site.email}}">{{site.email}}</a></div>
+        </div>
+        <div class="contact-card__row">
+          <span class="contact-card__icon"><svg class="i"><use href="#i-clock"/></svg></span>
+          <div><p class="contact-card__label">Öffnungszeiten</p>{{> hours}}</div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn--yellow" type="button" data-termin><svg class="i"><use href="#i-calendar"/></svg>Termin anfragen</button>
+          <a class="btn btn--ghost" href="{{site.mapsUrl}}" target="_blank" rel="noopener"><svg class="i"><use href="#i-route"/></svg>Route planen</a>
+        </div>
+      </div>
+      <div class="map" data-map data-src="{{site.mapsEmbed}}" data-reveal="zoom">
+        <svg class="map__art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="600" height="500" fill="#e7edf9"/>
+          <path class="water" d="M-10 400 C 120 360 180 430 300 410 S 520 340 620 380 L 620 520 L -10 520 Z" opacity=".8"/>
+          <rect class="green" x="40" y="40" width="150" height="110" rx="18"/>
+          <rect class="green" x="430" y="250" width="140" height="90" rx="18"/>
+          <rect class="block" x="230" y="40" width="110" height="80" rx="10"/>
+          <rect class="block" x="370" y="40" width="190" height="80" rx="10"/>
+          <rect class="block" x="40" y="190" width="130" height="120" rx="10"/>
+          <rect class="block" x="230" y="160" width="80" height="150" rx="10"/>
+          <rect class="block" x="350" y="160" width="60" height="70" rx="10"/>
+          <rect class="block" x="440" y="160" width="120" height="60" rx="10"/>
+          <path class="road" d="M0 170 H600" stroke-width="18"/>
+          <path class="road" d="M210 0 V500" stroke-width="16"/>
+          <path class="road" d="M330 140 C 340 260 420 240 420 340 S 360 420 330 500" stroke-width="12"/>
+          <path class="road" d="M0 340 C 120 330 200 350 330 330 S 520 236 600 236" stroke-width="10"/>
+          <path class="road" d="M410 0 V140" stroke-width="8"/>
+        </svg>
+        <span class="map__pin" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s-7.5-6-7.5-12a7.5 7.5 0 0 1 15 0c0 6-7.5 12-7.5 12z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div class="map__consent">
+          <strong>Karte anzeigen?</strong>
+          <p>Beim Laden der Karte werden Daten (u. a. Ihre IP-Adresse) an Google übertragen. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+          <div class="btn-row" style="justify-content:center">
+            <button class="btn btn--blue btn--sm" type="button" data-map-load>Google Maps laden</button>
+            <a class="btn btn--text btn--sm" href="{{site.mapsUrl}}" target="_blank" rel="noopener">In Google Maps öffnen<svg class="i"><use href="#i-arrow-out"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
