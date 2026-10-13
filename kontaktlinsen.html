@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Kontaktlinsen in Haiger – Anpassung & Nachbestellung | Blickwinkel</title>
-  <meta name="description" content="Unsichtbar gut sehen: Individuelle Kontaktlinsen-Anpassung bei Blickwinkel Augenoptik in Haiger, Kontaktlinsen online nachbestellen in 60 Sekunden und bequemes Kontaktlinsen-Abo.">
+  <title>Kontaktlinsen in Haiger – Blickwinkel Augenoptik</title>
+  <meta name="description" content="Kontaktlinsen bei Blickwinkel Augenoptik in Haiger: individuelle Anpassung, Nachkontrollen, Nachbestellung per Formular und Kontaktlinsen-Abo.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://www.blickwinkel-haiger.de/kontaktlinsen">
   <meta name="theme-color" content="#0b1f4d">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="Blickwinkel – Moderne Augenoptik & Kontaktlinsen">
-  <meta property="og:title" content="Kontaktlinsen in Haiger – Anpassung & Nachbestellung | Blickwinkel">
-  <meta property="og:description" content="Unsichtbar gut sehen: Individuelle Kontaktlinsen-Anpassung bei Blickwinkel Augenoptik in Haiger, Kontaktlinsen online nachbestellen in 60 Sekunden und bequemes Kontaktlinsen-Abo.">
+  <meta property="og:title" content="Kontaktlinsen in Haiger – Blickwinkel Augenoptik">
+  <meta property="og:description" content="Kontaktlinsen bei Blickwinkel Augenoptik in Haiger: individuelle Anpassung, Nachkontrollen, Nachbestellung per Formular und Kontaktlinsen-Abo.">
   <meta property="og:url" content="https://www.blickwinkel-haiger.de/kontaktlinsen">
   <meta property="og:image" content="https://www.blickwinkel-haiger.de/assets/img/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -41,6 +41,7 @@
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6.5 9.5 17 4 11.5"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
     <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
     <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
     <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1.8 12S5.5 4.8 12 4.8 22.2 12 22.2 12 18.5 19.2 12 19.2 1.8 12 1.8 12z"/><circle cx="12" cy="12" r="3.2"/></symbol>
@@ -100,10 +101,35 @@
       </ul>
     </nav>
     <div class="site-header__actions">
-      <a class="status-pill" href="index.html#kontakt" data-status hidden>
-        <span class="status-pill__dot" aria-hidden="true"></span>
-        <span class="status-pill__text" data-status-text>Öffnungszeiten</span>
-      </a>
+      <div class="status-wrap" data-hours-wrap>
+        <button class="status-pill" type="button" data-status data-hours-toggle aria-expanded="false" aria-controls="hours-pop" hidden>
+          <span class="status-pill__dot" aria-hidden="true"></span>
+          <span class="status-pill__text" data-status-text data-status-mode="tiny">Öffnungszeiten</span>
+          <svg class="i status-pill__chev" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+        </button>
+        <div class="hours-pop" id="hours-pop" data-hours-pop role="dialog" aria-label="Öffnungszeiten" hidden>
+          <p class="hours-pop__title">Öffnungszeiten</p>
+          <p class="status-line" data-status-line><span class="status-pill__dot" aria-hidden="true"></span><span data-status-text></span></p>
+          <table class="hours" data-hours>
+  <caption class="sr-only">Öffnungszeiten</caption>
+  <tbody>
+    <tr data-day="1"><th scope="row">Montag</th><td>9:00 – 13:00<br>14:00 – 18:00</td></tr>
+    <tr data-day="2"><th scope="row">Dienstag</th><td>9:00 – 13:00<br>14:00 – 18:00</td></tr>
+    <tr data-day="3"><th scope="row">Mittwoch</th><td>9:00 – 13:00</td></tr>
+    <tr data-day="4"><th scope="row">Donnerstag</th><td>9:00 – 13:00<br>14:00 – 18:00</td></tr>
+    <tr data-day="5"><th scope="row">Freitag</th><td>9:00 – 13:00<br>14:00 – 18:00</td></tr>
+    <tr data-day="6"><th scope="row">Samstag</th><td>9:00 – 13:00</td></tr>
+    <tr data-day="0"><th scope="row">Sonntag</th><td>geschlossen</td></tr>
+  </tbody>
+</table>
+
+          <p class="hours-pop__note">Hinterm Graben 4, 35708 Haiger · <a href="https://www.google.com/maps/search/?api=1&query=Blickwinkel+Augenoptik+Hinterm+Graben+4+35708+Haiger" target="_blank" rel="noopener">Route planen</a></p>
+          <div class="btn-row">
+            <button class="btn btn--blue btn--sm" type="button" data-termin>Termin anfragen</button>
+            <a class="btn btn--text btn--sm" href="tel:+492773912303"><svg class="i"><use href="#i-phone"/></svg>02773 912303</a>
+          </div>
+        </div>
+      </div>
       <a class="icon-btn" href="tel:+492773912303" aria-label="Anrufen: 02773 912303"><svg class="i"><use href="#i-phone"/></svg></a>
       <button class="btn btn--yellow btn--sm header-cta" type="button" data-termin>
         <svg class="i"><use href="#i-calendar"/></svg><span>Termin anfragen</span>
@@ -131,6 +157,19 @@
     </nav>
     <div class="menu__aside">
       <p class="menu__status" data-status-long>Öffnungszeiten werden geladen …</p>
+      <div class="menu__hours"><table class="hours" data-hours>
+  <caption class="sr-only">Öffnungszeiten</caption>
+  <tbody>
+    <tr data-day="1"><th scope="row">Montag</th><td>9:00 – 13:00<br>14:00 – 18:00</td></tr>
+    <tr data-day="2"><th scope="row">Dienstag</th><td>9:00 – 13:00<br>14:00 – 18:00</td></tr>
+    <tr data-day="3"><th scope="row">Mittwoch</th><td>9:00 – 13:00</td></tr>
+    <tr data-day="4"><th scope="row">Donnerstag</th><td>9:00 – 13:00<br>14:00 – 18:00</td></tr>
+    <tr data-day="5"><th scope="row">Freitag</th><td>9:00 – 13:00<br>14:00 – 18:00</td></tr>
+    <tr data-day="6"><th scope="row">Samstag</th><td>9:00 – 13:00</td></tr>
+    <tr data-day="0"><th scope="row">Sonntag</th><td>geschlossen</td></tr>
+  </tbody>
+</table>
+</div>
       <button class="btn btn--yellow btn--block" type="button" data-termin><svg class="i"><use href="#i-calendar"/></svg>Termin anfragen</button>
       <div class="menu__contact">
         <a href="tel:+492773912303"><svg class="i"><use href="#i-phone"/></svg>02773 912303</a>
@@ -148,27 +187,25 @@
     <div class="page-hero__content">
       <ol class="crumbs" data-hero-in><li><a href="index.html">Startseite</a></li><li aria-current="page">Kontaktlinsen</li></ol>
       <h1 class="page-hero__title" data-hero-in style="--d:1">Unsichtbar <em>gut sehen.</em></h1>
-      <p class="lead" data-hero-in style="--d:2">Kontaktlinsen von Blickwinkel Augenoptik in Haiger – präzise angepasst, kinderleicht in der Handhabung und bequem nachbestellt.</p>
+      <p class="lead" data-hero-in style="--d:2">Individuelle Anpassung, regelmäßige Kontrollen und bequeme Nachbestellung.</p>
       <div class="btn-row" data-hero-in style="--d:3">
         <a class="btn btn--yellow" href="#nachbestellen"><svg class="i"><use href="#i-box"/></svg>Linsen nachbestellen</a>
-        <a class="btn btn--ghost-light" href="index.html#kontakt" data-termin="kontaktlinsen">Anpassung anfragen</a>
       </div>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="container split">
-    <div class="split__text">
-      <span class="eyebrow" data-reveal>Tragekomfort</span>
-      <h2 class="h2" data-reveal style="--i:1">Optimaler Sehkomfort – <em>zu jeder Jahreszeit.</em></h2>
-      <p class="lead" data-reveal style="--i:2">Kontaktlinsen sind die perfekte Ergänzung zu Ihrer Brille: Sie bieten klare Sicht, hohen Tragekomfort und ein uneingeschränktes Blickfeld – bei Bewegung, im Alltag und zu besonderen Anlässen.</p>
-      <p data-reveal style="--i:3">Damit Ihre Kontaktlinsen auch in der kalten Jahreszeit angenehm zu tragen sind, z. B. bei trockener Heizungsluft, ist eine individuelle Kontaktlinsenanpassung besonders wichtig. Dafür nehmen wir uns bei Blickwinkel Augenoptik Zeit! Wir beraten Sie persönlich und finden gemeinsam die richtigen Kontaktlinsen für Sie.</p>
-      <div class="btn-row" data-reveal style="--i:4"><button class="btn btn--blue" type="button" data-termin="kontaktlinsen"><svg class="i"><use href="#i-calendar"/></svg>Termin anfragen</button></div>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-reveal>Anpassung</span>
+      <h2 class="h2" data-reveal style="--i:1">So läuft die Anpassung ab</h2>
     </div>
-    <div class="split__media" data-reveal="right">
-      <div class="media-frame media-frame--parallax" style="--ratio:4/4.6"><img src="assets/img/kontaktlinsen-paar.webp" alt="Paar unterhält sich entspannt im Café" width="900" height="1065" loading="lazy" data-parallax="0.06"></div>
-      <div class="media-float media-float--tl" data-reveal="zoom" style="--i:2"><img src="assets/img/kl-schritt-2.webp" alt="Frau mit Kontaktlinse auf der Fingerspitze" width="700" height="905" loading="lazy" style="object-position:50% 30%"></div>
+    <div class="features features--compact" data-stagger>
+      <div class="feature"><span class="feature__num">01</span><span class="feature__icon"><svg class="i"><use href="#i-scan"/></svg></span><h3>Beratung &amp; Augen-Check</h3><p>Wir messen Ihre Werte sowie Wölbung und Durchmesser der Hornhaut.</p></div>
+      <div class="feature"><span class="feature__num">02</span><span class="feature__icon"><svg class="i"><use href="#i-lens"/></svg></span><h3>Anpassung &amp; Probetragen</h3><p>Sie lernen Pflege, Auf- und Absetzen und tragen die Linsen ein paar Tage zur Probe.</p></div>
+      <div class="feature"><span class="feature__num">03</span><span class="feature__icon"><svg class="i"><use href="#i-check"/></svg></span><h3>Nachkontrolle</h3><p>Wir prüfen Sitz, Komfort und Verträglichkeit und optimieren bei Bedarf.</p></div>
+      <div class="feature"><span class="feature__num">04</span><span class="feature__icon"><svg class="i"><use href="#i-calendar"/></svg></span><h3>Regelmäßige Kontrollen</h3><p>Mindestens einmal im Jahr – für dauerhaft sicheres und komfortables Sehen.</p></div>
     </div>
   </div>
 </section>
@@ -176,15 +213,10 @@
 <section class="section section--blue" id="nachbestellen">
   <div class="container">
     <div class="split split--wide-text" style="align-items:start">
-      <div class="split__text on-dark" style="position:sticky;top:calc(var(--header-h) + 2rem)">
-        <span class="eyebrow eyebrow--light" data-reveal>Kontaktlinsen online nachbestellen</span>
-        <h2 class="h2" data-reveal style="--i:1">Kinderleicht in nur <em>60 Sekunden.</em></h2>
-        <p class="lead" data-reveal style="--i:2">Wählen Sie Ihre Kontaktlinsen und Pflegemittel, entscheiden Sie sich für Abholung oder Versand – fertig. Wir melden uns, sobald Ihre Bestellung bereitliegt.</p>
-        <ul class="checklist" data-stagger style="color:rgba(255,255,255,.9)">
-          <li>Monats- und Tageslinsen in Ihren gewohnten Werten</li>
-          <li>Pflegemittel einfach mitbestellen</li>
-          <li>Abholung im Geschäft oder Versand nach Hause</li>
-        </ul>
+      <div class="split__text on-dark">
+        <span class="eyebrow eyebrow--light" data-reveal>Nachbestellung</span>
+        <h2 class="h2" data-reveal style="--i:1">Kontaktlinsen nachbestellen</h2>
+        <p class="lead" data-reveal style="--i:2">Linsen und Pflegemittel auswählen, Abholung oder Versand wählen – fertig. Wir melden uns, sobald Ihre Bestellung bereitliegt.</p>
       </div>
       <div data-reveal="zoom">
         <form class="form-panel" data-order-form novalidate>
@@ -254,75 +286,50 @@
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="section-head section-head--split">
-      <div style="display:grid;gap:1rem">
-        <span class="eyebrow" data-reveal>So läuft’s ab</span>
-        <h2 class="h2" data-reveal style="--i:1">Die 4 Schritte der <em>Kontaktlinsen-Anpassung.</em></h2>
+  <div class="container split split--reverse">
+    <div class="split__text">
+      <span class="eyebrow" data-reveal>Kontaktlinsen-Abo</span>
+      <h2 class="h2" data-reveal style="--i:1">Immer gut versorgt</h2>
+      <p data-reveal style="--i:2">Ihre Linsen kommen regelmäßig zu Ihnen nach Hause – in aktueller Sehstärke, zu festen Kosten und jederzeit anpassbar oder kündbar.</p>
+      <div class="btn-row" data-reveal style="--i:3">
+        <a class="btn btn--ghost" href="http://www.kontaktlinse-sorglos.de/blickwinkel-haiger" target="_blank" rel="noopener">Zum Abo-Login<svg class="i"><use href="#i-arrow-out"/></svg></a>
       </div>
-      <p class="lead" data-reveal style="--i:2">Von der ersten Messung bis zur regelmäßigen Kontrolle – wir begleiten Sie, damit Sie dauerhaft gesund und komfortabel sehen.</p>
     </div>
-    <div class="cards" data-stagger>
-      <article class="card card--tall"><div class="card__img"><img src="assets/img/kl-schritt-1.webp" alt="Frau schaut in eine Spaltlampe" width="700" height="905" loading="lazy"></div><div class="card__body"><span class="card__kicker">Schritt 01</span><h3 class="card__title">Beratung &amp; Augen-Check</h3><p class="card__text">Wir erfassen Ihre Bedürfnisse und ermitteln alle Daten für die exakte Anpassung – neben den Dioptrienwerten z. B. auch Wölbung und Durchmesser der Hornhaut.</p></div></article>
-      <article class="card card--tall"><div class="card__img"><img src="assets/img/kl-schritt-2.webp" alt="Frau mit Kontaktlinse auf dem Finger" width="700" height="905" loading="lazy"></div><div class="card__body"><span class="card__kicker">Schritt 02</span><h3 class="card__title">Anpassung &amp; Probetragen</h3><p class="card__text">Wir finden die Linsen, die am besten zu Ihnen passen, erklären Pflege sowie Auf- und Absetzen Schritt für Schritt – dann tragen Sie sie ein paar Tage zur Probe.</p></div></article>
-      <article class="card card--tall"><div class="card__img"><img src="assets/img/kl-schritt-3.webp" alt="Augenoptikerin setzt einem Mann eine Kontaktlinse ein" width="700" height="905" loading="lazy" style="--pos:50% 25%"></div><div class="card__body"><span class="card__kicker">Schritt 03</span><h3 class="card__title">Nachkontrolle &amp; Optimierung</h3><p class="card__text">Nach der Probewoche prüfen wir Sitz, Tragekomfort und Verträglichkeit. Falls nötig, passen wir Material, Werte oder Linsentyp noch einmal an.</p></div></article>
-      <article class="card card--tall"><div class="card__img"><img src="assets/img/kl-schritt-4.webp" alt="Frau schaut sich einen Kontaktlinsenbehälter an" width="700" height="905" loading="lazy"></div><div class="card__body"><span class="card__kicker">Schritt 04</span><h3 class="card__title">Regelmäßige Nachkontrollen</h3><p class="card__text">Mindestens einmal pro Jahr überprüfen wir das Wohlbefinden Ihrer Augen, den Sitz der Linsen und Ihre Sehqualität – für dauerhaft sicheres Sehen.</p></div></article>
+    <div class="split__media" data-reveal="left">
+      <div class="media-frame" style="--ratio:16/11"><img src="assets/img/kontaktlinsen-abo.webp" alt="Mann liegt entspannt auf dem Sofa" width="900" height="1161" loading="lazy" style="--pos:50% 30%"></div>
     </div>
   </div>
 </section>
 
 <section class="section section--white">
-  <div class="container split split--reverse">
-    <div class="split__text">
-      <span class="eyebrow" data-reveal>Kontaktlinsen-Abo</span>
-      <h2 class="h2" data-reveal style="--i:1">Immer gut versorgt – <em>ganz ohne daran zu denken.</em></h2>
-      <p class="lead" data-reveal style="--i:2">Mit unserem Kontaktlinsen-Abo bekommen Sie Ihre Linsen regelmäßig und zuverlässig nach Hause geliefert. So haben Sie immer frische Kontaktlinsen zur Hand und können sich entspannt auf den Alltag konzentrieren.</p>
-      <ul class="checklist" data-stagger>
-        <li><span><strong>Immer versorgt</strong> – immer frische Linsen in aktueller Sehstärke</span></li>
-        <li><span><strong>Feste Kosten</strong> – klar kalkulierbar, ohne Überraschungen</span></li>
-        <li><span><strong>Flexibel</strong> – jederzeit anpassbar oder kündbar</span></li>
-      </ul>
-      <div class="btn-row" data-reveal>
-        <button class="btn btn--blue" type="button" data-termin="kontaktlinsen"><svg class="i"><use href="#i-calendar"/></svg>Termin anfragen</button>
-        <a class="btn btn--ghost" href="http://www.kontaktlinse-sorglos.de/blickwinkel-haiger" target="_blank" rel="noopener">Zu meinem Kontaktlinsen-Abo<svg class="i"><use href="#i-arrow-out"/></svg></a>
-      </div>
-      <p class="small muted" data-reveal>Sie haben bereits ein Abo bei uns? Über den Button gelangen Sie direkt zum Login.</p>
-    </div>
-    <div class="split__media" data-reveal="left">
-      <div class="media-frame" style="--ratio:4/4.4"><img src="assets/img/kontaktlinsen-abo.webp" alt="Mann liegt entspannt auf dem Sofa" width="900" height="1161" loading="lazy"></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
+  <div class="container faq-grid">
     <div class="section-head">
-      <span class="eyebrow" data-reveal>Kontaktlinsen</span>
-      <h2 class="h2" data-reveal style="--i:1">Gut <em>zu wissen.</em></h2>
+      <span class="eyebrow" data-reveal>Gut zu wissen</span>
+      <h2 class="h2" data-reveal style="--i:1">Häufige Fragen</h2>
     </div>
-    <div class="grid-3" data-stagger>
-      <article class="info-card"><div class="info-card__img"><img src="assets/img/kl-tages-monats.webp" alt="Junge Frau hält einen Kontaktlinsenbehälter in die Kamera" width="550" height="520" loading="lazy"></div><h3>Tages- oder Monatslinsen?</h3><p>Tageslinsen sind besonders hygienisch und ideal für gelegentliches Tragen, z. B. beim Sport oder auf Reisen. Monatslinsen eignen sich für regelmäßige Träger*innen und bieten ein gutes Preis-Leistungs-Verhältnis.</p></article>
-      <article class="info-card"><div class="info-card__img"><img src="assets/img/kl-hornhaut.webp" alt="Mann schaut nachdenklich" width="550" height="520" loading="lazy"></div><h3>Kontaktlinsen bei Hornhautverkrümmung?</h3><p>Auch bei Astigmatismus müssen Sie nicht verzichten: Torische Kontaktlinsen gleichen die unregelmäßige Krümmung der Hornhaut aus. Wichtig sind eine exakte Anpassung und regelmäßige Kontrollen.</p></article>
-      <article class="info-card"><div class="info-card__img"><img src="assets/img/kl-trockene-augen.webp" alt="Frau verwendet Augentropfen" width="550" height="520" loading="lazy"></div><h3>Kontaktlinsen bei trockenen Augen?</h3><p>Es gibt spezielle Kontaktlinsen mit hoher Sauerstoffdurchlässigkeit und feuchtigkeitsspendenden Materialien, die besonders sanft und angenehm zu tragen sind. Wir beraten Sie gerne!</p></article>
+    <div class="accordion" data-stagger>
+      <details class="acc">
+        <summary><span>Tages- oder Monatslinsen?</span><span class="acc__icon"><svg class="i"><use href="#i-plus"/></svg></span></summary>
+        <div class="acc__body"><p>Tageslinsen sind besonders hygienisch und ideal für gelegentliches Tragen, z. B. beim Sport oder auf Reisen. Monatslinsen eignen sich für regelmäßiges Tragen und bieten ein gutes Preis-Leistungs-Verhältnis.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span>Gibt es Kontaktlinsen bei Hornhautverkrümmung?</span><span class="acc__icon"><svg class="i"><use href="#i-plus"/></svg></span></summary>
+        <div class="acc__body"><p>Ja. Torische Kontaktlinsen gleichen die unregelmäßige Krümmung der Hornhaut aus. Wichtig sind eine exakte Anpassung und regelmäßige Kontrollen.</p></div>
+      </details>
+      <details class="acc">
+        <summary><span>Kann ich Kontaktlinsen bei trockenen Augen tragen?</span><span class="acc__icon"><svg class="i"><use href="#i-plus"/></svg></span></summary>
+        <div class="acc__body"><p>Oft ja. Es gibt spezielle Linsen mit hoher Sauerstoffdurchlässigkeit und feuchtigkeitsspendenden Materialien. Wir beraten Sie gerne.</p></div>
+      </details>
     </div>
   </div>
 </section>
 
 <section class="section section--tight">
   <div class="container">
-    <div class="cta-band" data-reveal="zoom">
-      <div class="cta-band__eye" aria-hidden="true"><svg class="logo-svg" viewBox="0 0 254.4 164.08" role="img" aria-label="Blickwinkel – Moderne Augenoptik &amp; Kontaktlinsen" focusable="false">
-  <path class="logo-word" d="M230.28,93.6h6.96c-.16,23.12.32,46.88-.24,69.6h-69.36v-7.2h62.16c.56-20.08.08-41.2.24-61.68-.02-.34-.04-.68.24-.72ZM118.92,106.32c.87-1.14,2.56-2.93,2.16-4.08-.25-.73-1.44-1.53-2.4-.48-5.27,6.45-10.56,13.67-15.6,20.16-1.71,2.2-3.4,4.46-5.28,6.24v-10.32c0-2.15.71-8.77-1.68-8.64-1.95.1-1.44,4.27-1.44,6.96v17.04c0,3.06-.52,7.13,1.44,7.2,2.67.1,1.37-5.25,1.68-6.72,7.35,1.95,15.48,3.66,23.28,5.52,1.94.46,6.96,2.38,6.72-.48-.16-1.9-4.7-1.98-6.48-2.4-7.21-1.7-14.68-3.72-21.36-5.28,5.36-7.51,12.88-16.77,18.96-24.72ZM178.68,108.48c-.35.13-.58.37-.72.72-.42,5.52-.24,16.96-.24,24.48,0,2.99-.54,6.94,1.44,6.96,2.22.02,1-2.82,1.68-3.6,2.35.64,4.38,1.3,7.2,2.16,1.26.38,6.71,2.77,6.72,0,0-1.2-1.72-1.33-2.64-1.68-3.48-1.32-7.03-2.17-9.84-3.36,1.71-2.06,3.46-4.03,5.28-6,1.77-1.91,4.5-3.45,5.04-6.24-1.3-1.6-2.68-.19-3.6.72-2.89,2.86-5.73,7.13-8.4,8.88v-11.52c0-3.92.39-8-.48-11.28-.28-.28-.85-.27-1.44-.24ZM215.88,109.2c-.43,6.51-.24,17.83-.24,25.2,0,2.6-.31,5.4,1.92,6.48,2.5-.25,9.49-.67,9.12-3.12-.4-2.7-5.74.53-8.16.24v-22.56c0-2.36.53-5.08-.72-6.96-.96-.08-1.75,0-1.92.72ZM2.52,140.4c4.11.21,10.57-1.44,15.12-3.6,4.61-2.19,10.15-6.1,9.36-11.52-.71-4.86-6.48-5.86-12.72-5.76-1.11-.05.38-.85.72-.96,1.14-1.67,2.31-3.14,1.92-5.52-.89-5.41-10.35-4.54-13.68-1.44-.09-1.95-2.41-3.42-3.36-1.2v29.04c.63,1.24,1.64.91,2.64.96ZM3,121.92v-7.2c1.81-1.49,9.62-4.68,10.56-.96.41,1.63-1.27,3.61-2.4,4.56-2.14,1.8-5.52,2.77-8.16,3.6ZM23.64,125.28c.24,5.26-4.3,7.04-7.68,8.64-3.66,1.74-8.16,3.3-12.96,3.36v-12.72c5.3-2.04,16.76-4.01,20.64.72ZM32.04,114.96c0-2.94-.12-7.68-2.64-5.04-.82,1.31-.48,4.68-.48,7.44v7.92c0,5.61-.52,11.11.72,14.88,6.31.43,14.33.24,21.36.24,2.62,0,5.62.34,5.52-1.68-.1-1.91-2.96-1.44-5.04-1.44h-19.44v-22.32ZM58.2,125.52v8.16c0,2.41-.49,6.87,1.68,6.72,1.81-.12,1.44-3.98,1.44-6.96v-17.04c0-3.43.42-8.93-2.64-6.72-.85,4.36-.48,9.99-.48,15.84ZM80.04,111.84c-7.8,2.75-15.96,9.07-16.56,17.28-.82,11.3,11.05,13.94,19.44,9.6,2.02-1.04,5.94-2.65,4.08-5.52-2.15.04-3.46,1.99-5.28,2.88-1.87.92-4.2,1.73-6.72,1.68-5.83-.12-9.85-5.32-7.68-11.76,2.4-7.15,12.1-11.66,19.92-13.2.39,6.06,5.02.82,2.64-2.64-3.22-.92-6.1.36-9.84,1.68ZM157.56,117.6c2.55.52,2.33-4.52,1.2-6-3.29-1.14-3.09,5.61-1.2,6ZM154.2,117.12c-1.47.89-1.8,2.77-2.64,4.8-1.87,4.52-3.81,9.62-5.76,13.44-.59-2.01-1.26-3.6-2.16-6-.62-1.64-1.34-5.21-3.12-5.04-1.6.15-2.08,3.77-2.64,5.28-.87,2.33-1.64,3.98-2.4,5.76-.79-1.6-1.89-4.13-3.12-7.2-1.05-2.62-2.26-9.01-5.04-6.24,1.33,4.84,3.61,9.82,5.52,14.64.47,1.18,1.37,4.09,2.64,4.08,1.63-.01,2.31-3.74,2.88-5.28.9-2.45,1.54-4.18,2.4-6,1.96,3.58,2.28,9.02,5.28,11.28,1.85-.99,2.13-3.24,2.88-5.04,2.39-5.72,4.94-11.49,6.96-17.28-.47-.49-.75-1.17-1.68-1.2ZM156.84,121.68c-.78,1.63-.48,5.88-.48,10.08,0,2.83-.9,9.06,1.68,8.88,2.28-.16,1.44-6.63,1.44-9.36,0-4.12.44-7.82-.72-10.08-.82-.02-1.67-.07-1.92.48ZM162.36,121.2c-.34.06-.27.53-.48.72-.42,1.92-.24,6-.24,10.08,0,3.14-.8,8.68,1.44,8.64,2.97-.05.73-11.22,1.44-13.44,1.93-1.6,4.44-3.86,7.92-3.12.43,2.44.24,5.36.24,8.88,0,2.28-.84,7.68,1.44,7.68s1.44-6.88,1.44-9.36c0-4.26.59-8.09-1.2-9.84-4.35-1.27-7.68,1.73-9.84,2.64.05-1.73-.14-3.22-2.16-2.88ZM59.64,152.4c5.15-.14,5.14-9.15-.96-7.92-5.09,1.03-3.33,8.04.96,7.92ZM213.72,126.72c.71-3.76-1.49-6.01-5.28-5.52-4.59.59-10.73,7.36-12.24,11.04-1.66,4.05-.07,7.77,3.6,8.4,2.43.42,13.1-.76,12.72-3.6-.31-2.31-3.71-.31-6,.24-2.84.68-6.36,1.04-7.44-.48-.85-1.19-.45-3,.96-4.8,6.41.42,12.82-.74,13.68-5.28ZM201.96,129.12c2.3-2.19,4.49-5.74,8.88-5.04-.84.13.26.45,0,1.68-.59,2.87-4.48,3.73-8.88,3.36Z"/>
-  <path class="logo-outline" d="M136.03.65l13.01.55c32.47,7.73,63.64,19.61,95.28,30l10.27,7.13v.24l-19.53,1.47c-12.63,2.49-25,5.71-37.04,10.24l-39.5,19.54-1.13.18,25.04-15.16,37.36-20.72-1.52-.88c-19.53-8.33-37.94-18.84-58.48-24.56-1.51-.42-3.05-.69-4.56-1.08-2.72-.7-6.61-2.08-9.27-2.37-3.2-.36-7.25-.17-10.54-.26-6.86-.18-15.03-.37-21.71,1.07-15.23,3.27-33.35,9.61-46.77,17.55-3.11,1.84-6.64,4.87-9.63,7.05-2.16,1.58-5.19,3.24-7.09,5.03-2.62,2.46-7.08,7.88-9.33,10.83-1.56,2.05-6.65,9.27-7.39,11.33-.94,2.61-1.07,6.2-1.87,8.93.53,2.24.15,4.98.49,7.18.08.54.29.71.58,1.1,1.48,2,5.06,4.4,6.87,6.33l18.93,12.86c-4.8-.21-9.61-.77-14.4-1.32-7.86-7.3-16.11-14.54-26.34-18.3-3.65-1.34-7.74-2.18-11.47-3.41-.35-.12-1.74-.39-1.55-.84,8.59-8.19,16.54-17.09,25.19-25.21,10.98-10.3,22.79-19.68,34.58-29.02C81.08,8.55,98.87,1.8,117.31.89c5.33-.26,10.87.18,16.23.02l.81-.26h1.68Z"/>
-  <g class="logo-eye">
-    <circle class="logo-pupil" cx="109.6" cy="30.9" r="19.5"/>
-    <path class="logo-iris" d="M155.23,7.61c7.62,18.54,6.35,38.65-6.25,54.59-14.47,18.32-35.1,24.87-57.42,16.63-20.75-7.66-31.89-26.84-34.26-48.18,2.99-2.18,6.52-5.21,9.63-7.05,13.42-7.94,31.54-14.28,46.77-17.55,6.69-1.44,14.85-1.25,21.71-1.07,3.29.09,7.35-.1,10.54.26,2.65.3,6.55,1.68,9.27,2.37ZM123.22,42.32c14.85-17.77-11.23-41.01-27.16-24.4-17.46,18.21,11.21,43.49,27.16,24.4Z" fill-rule="evenodd"/>
-    <path class="logo-glint" d="M119.71,22.73c-.03.34-1.09.42-1.35.45-1.72.15-2.87-.07-4.65.39-2.32.6-4.81,1.97-7.15,2.69-.62.19-4.45,1.27-4.74,1.26-.5-.02-2.02-1.84-2.24-2.3-.74-1.55-.26-3.37.32-4.9.24-.24,2.6-.68,3.12-.72,2.72-.22,10.93.75,13.49,1.64,1.05.36,2.06,1.25,3.19,1.49Z"/>
-  </g>
-</svg></div>
+    <div class="contact-strip" data-reveal>
       <div>
-        <h2 class="cta-band__title">Wir beraten Sie gerne. <em>Jetzt Wunschtermin vereinbaren!</em></h2>
-        <p>Nehmen Sie sich Zeit für gutes Sehen – wir nehmen sie uns auch. Ganz ohne Zeitdruck, ehrlich und individuell.</p>
+        <h2 class="contact-strip__title">Fragen oder Terminwunsch?</h2>
+        <p class="status-line" data-status-line><span class="status-pill__dot" aria-hidden="true"></span><span data-status-text>Öffnungszeiten</span></p>
       </div>
       <div class="btn-row">
         <button class="btn btn--blue" type="button" data-termin><svg class="i"><use href="#i-calendar"/></svg>Termin anfragen</button>

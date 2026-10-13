@@ -89,15 +89,15 @@
     const holiday = holidayName(date);
     for (const [a, b] of today) {
       if (min >= a && min < b) {
-        return { state: 'open', short: `Geöffnet · bis ${fmtTime(b)} Uhr`, long: `Jetzt geöffnet – heute bis ${fmtTime(b)} Uhr.` };
+        return { state: 'open', tiny: `Geöffnet bis ${fmtTime(b)}`, short: `Geöffnet · bis ${fmtTime(b)} Uhr`, long: `Jetzt geöffnet – heute bis ${fmtTime(b)} Uhr.` };
       }
     }
     const later = today.find(([a]) => a > min);
     if (later && today.some(([, b]) => b <= min)) {
-      return { state: 'break', short: `Mittagspause · ab ${fmtTime(later[0])} Uhr`, long: `Gerade Mittagspause – ab ${fmtTime(later[0])} Uhr sind wir wieder für Sie da.` };
+      return { state: 'break', tiny: `Pause bis ${fmtTime(later[0])}`, short: `Mittagspause · ab ${fmtTime(later[0])} Uhr`, long: `Gerade Mittagspause – ab ${fmtTime(later[0])} Uhr sind wir wieder für Sie da.` };
     }
     if (later) {
-      return { state: 'closed', short: `Öffnet heute ${fmtTime(later[0])} Uhr`, long: `Noch geschlossen – heute öffnen wir um ${fmtTime(later[0])} Uhr.` };
+      return { state: 'closed', tiny: `Öffnet ${fmtTime(later[0])}`, short: `Öffnet heute ${fmtTime(later[0])} Uhr`, long: `Noch geschlossen – heute öffnen wir um ${fmtTime(later[0])} Uhr.` };
     }
     for (let i = 1; i < 14; i++) {
       const d = addDays(date, i);
@@ -105,10 +105,10 @@
       if (h.length) {
         const when = i === 1 ? 'morgen' : DAYS_SHORT[d.getUTCDay()];
         const prefix = holiday ? `Heute (${holiday}) geschlossen` : 'Jetzt geschlossen';
-        return { state: 'closed', short: `Geschlossen · öffnet ${when} ${fmtTime(h[0][0])}`, long: `${prefix} – wir öffnen ${when} um ${fmtTime(h[0][0])} Uhr.` };
+        return { state: 'closed', tiny: 'Geschlossen', short: `Geschlossen · öffnet ${when} ${fmtTime(h[0][0])}`, long: `${prefix} – wir öffnen ${when} um ${fmtTime(h[0][0])} Uhr.` };
       }
     }
-    return { state: 'closed', short: 'Geschlossen', long: 'Derzeit geschlossen.' };
+    return { state: 'closed', tiny: 'Geschlossen', short: 'Geschlossen', long: 'Derzeit geschlossen.' };
   }
 
   function renderStatus() {
@@ -119,7 +119,7 @@
       el.classList.remove('is-open', 'is-break', 'is-closed');
       el.classList.add(`is-${s.state}`);
       const t = $('[data-status-text]', el);
-      if (t) t.textContent = s.short;
+      if (t) t.textContent = t.dataset.statusMode === 'tiny' ? s.tiny : s.short;
     });
     $$('[data-status-long]').forEach((el) => { el.textContent = s.long; });
     $$('[data-status-line]').forEach((el) => {
@@ -194,6 +194,25 @@
   }
 
   /* ------------------------------------------------------------------
+     Öffnungszeiten-Box im Header
+     ------------------------------------------------------------------ */
+  function initHoursPop() {
+    const wrap = $('[data-hours-wrap]');
+    if (!wrap) return;
+    const btn = $('[data-hours-toggle]', wrap);
+    const pop = $('[data-hours-pop]', wrap);
+    const set = (open) => {
+      pop.hidden = !open;
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    btn.addEventListener('click', (e) => { e.stopPropagation(); set(pop.hidden); });
+    pop.addEventListener('click', (e) => { if (e.target.closest('[data-termin], a')) set(false); });
+    document.addEventListener('click', (e) => { if (!pop.hidden && !wrap.contains(e.target)) set(false); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !pop.hidden) { set(false); btn.focus(); } });
+    window.addEventListener('scroll', () => { if (!pop.hidden && header && header.classList.contains('is-hidden')) set(false); }, { passive: true });
+  }
+
+  /* ------------------------------------------------------------------
      Scroll-Handler (gebündelt)
      ------------------------------------------------------------------ */
   const scrollFns = [];
@@ -215,7 +234,8 @@
     header.classList.toggle('is-scrolled', y > 30);
     const goingDown = y > lastY + 4;
     const goingUp = y < lastY - 4;
-    if (goingDown && y > 500 && !menuOpen) header.classList.add('is-hidden');
+    const popOpen = !!$('[data-hours-pop]:not([hidden])');
+    if (goingDown && y > 500 && !menuOpen && !popOpen) header.classList.add('is-hidden');
     else if (goingUp || y < 200) header.classList.remove('is-hidden');
     lastY = y;
   });
@@ -459,38 +479,13 @@
     if (!tour) return;
     const track = $('.tour__track', tour);
     const bar = $('.tour__progress span', tour);
-    const mq = window.matchMedia('(min-width: 1000px)');
-    let dist = 0;
-    function setup() {
-      const pin = mq.matches && !reduceMotion;
-      tour.classList.toggle('is-pinned', pin);
-      track.style.transform = '';
-      tour.style.height = '';
-      if (pin) {
-        const last = track.lastElementChild;
-        const padEnd = parseFloat(getComputedStyle(track).paddingRight) || 0;
-        dist = Math.max(0, last.offsetLeft + last.offsetWidth + padEnd - window.innerWidth);
-        tour.style.height = `${dist + window.innerHeight}px`;
-      }
-      runScroll();
-    }
-    onScroll(() => {
-      if (tour.classList.contains('is-pinned')) {
-        const r = tour.getBoundingClientRect();
-        const p = dist ? clamp(-r.top / dist, 0, 1) : 0;
-        track.style.transform = `translate3d(${(-p * dist).toFixed(1)}px, 0, 0)`;
-        if (bar) bar.style.setProperty('--p', Math.max(0.08, p));
-      }
-    });
-    track.addEventListener('scroll', () => {
-      if (tour.classList.contains('is-pinned') || !bar) return;
+    const update = () => {
       const max = track.scrollWidth - track.clientWidth;
-      bar.style.setProperty('--p', max ? Math.max(0.08, track.scrollLeft / max) : 1);
-    }, { passive: true });
-    mq.addEventListener('change', setup);
-    window.addEventListener('resize', () => { clearTimeout(setup.t); setup.t = setTimeout(setup, 150); });
-    window.addEventListener('load', setup);
-    setup();
+      if (bar) bar.style.setProperty('--p', max > 0 ? Math.max(0.08, track.scrollLeft / max) : 1);
+    };
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    update();
   }
 
   /* ------------------------------------------------------------------
@@ -1053,6 +1048,7 @@
      ------------------------------------------------------------------ */
   renderStatus();
   setInterval(renderStatus, 60 * 1000);
+  initHoursPop();
   initHero();
   initPageHero();
   initLoops();
@@ -1069,6 +1065,14 @@
   initTermin();
   initOrder();
   runScroll();
+
+  // Sprunglinks (z. B. #kontakt von einer Unterseite) nach dem Laden sicher ansteuern
+  if (location.hash && location.hash.length > 1 && location.hash !== '#termin') {
+    window.addEventListener('load', () => {
+      const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (target) setTimeout(() => target.scrollIntoView({ block: 'start' }), 50);
+    });
+  }
 
   // Direktlink #termin öffnet den Dialog
   if (location.hash === '#termin') {

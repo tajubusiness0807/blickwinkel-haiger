@@ -1,9 +1,9 @@
-<section class="section reviews section--dark" aria-labelledby="reviews-title">
+<section class="section reviews reviews--light section--paper2" aria-labelledby="reviews-title">
   <div class="container">
     <div class="reviews__top">
       <div class="section-head" style="margin:0">
-        <span class="eyebrow eyebrow--light" data-reveal>Das sagen unsere Kunden</span>
-        <h2 class="h2" id="reviews-title" data-reveal style="--i:1">Ehrliche Beratung, <em>die ankommt.</em></h2>
+        <span class="eyebrow" data-reveal>Google-Rezensionen</span>
+        <h2 class="h2" id="reviews-title" data-reveal style="--i:1">Das sagen unsere Kunden</h2>
       </div>
       <div class="rating-big" data-reveal style="--i:2">
         <span class="rating-big__num" data-count="4.9" data-decimals="1">{{site.rating}}</span>
@@ -11,7 +11,7 @@
           <span class="stars stars--big stars--anim" aria-label="{{site.rating}} von 5 Sternen">
             <svg class="i" style="--s:0"><use href="#i-star"/></svg><svg class="i" style="--s:1"><use href="#i-star"/></svg><svg class="i" style="--s:2"><use href="#i-star"/></svg><svg class="i" style="--s:3"><use href="#i-star"/></svg><svg class="i" style="--s:4"><use href="#i-star"/></svg>
           </span>
-          <p class="muted" style="color:rgba(255,255,255,.7)">{{site.reviewCount}} Google-Rezensionen</p>
+          <p class="reviews__note">{{site.reviewCount}} Rezensionen</p>
         </div>
       </div>
     </div>
@@ -46,9 +46,9 @@
     </div>
   </div>
   <div class="container">
-    <div class="btn-row mt-3" data-reveal>
-      <a class="btn btn--yellow" href="{{site.googleReviewUrl}}" target="_blank" rel="noopener"><svg class="i"><use href="#i-star"/></svg>Jetzt bewerten</a>
-      <a class="btn btn--ghost-light" href="{{site.googleReviewsUrl}}" target="_blank" rel="noopener">Alle Rezensionen auf Google<svg class="i"><use href="#i-arrow-out"/></svg></a>
-    </div>
+    <p class="more-links" data-reveal>
+      <a class="link-arrow" href="{{site.googleReviewsUrl}}" target="_blank" rel="noopener">Alle Rezensionen auf Google<svg class="i"><use href="#i-arrow-out"/></svg></a>
+      <a class="link-arrow" href="{{site.googleReviewUrl}}" target="_blank" rel="noopener">Bewertung schreiben<svg class="i"><use href="#i-arrow-out"/></svg></a>
+    </p>
   </div>
 </section>

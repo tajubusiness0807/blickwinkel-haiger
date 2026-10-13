@@ -15,10 +15,23 @@
       </ul>
     </nav>
     <div class="site-header__actions">
-      <a class="status-pill" href="index.html#kontakt" data-status hidden>
-        <span class="status-pill__dot" aria-hidden="true"></span>
-        <span class="status-pill__text" data-status-text>Öffnungszeiten</span>
-      </a>
+      <div class="status-wrap" data-hours-wrap>
+        <button class="status-pill" type="button" data-status data-hours-toggle aria-expanded="false" aria-controls="hours-pop" hidden>
+          <span class="status-pill__dot" aria-hidden="true"></span>
+          <span class="status-pill__text" data-status-text data-status-mode="tiny">Öffnungszeiten</span>
+          <svg class="i status-pill__chev" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+        </button>
+        <div class="hours-pop" id="hours-pop" data-hours-pop role="dialog" aria-label="Öffnungszeiten" hidden>
+          <p class="hours-pop__title">Öffnungszeiten</p>
+          <p class="status-line" data-status-line><span class="status-pill__dot" aria-hidden="true"></span><span data-status-text></span></p>
+          {{> hours}}
+          <p class="hours-pop__note">{{site.street}}, {{site.zip}} {{site.city}} · <a href="{{site.mapsUrl}}" target="_blank" rel="noopener">Route planen</a></p>
+          <div class="btn-row">
+            <button class="btn btn--blue btn--sm" type="button" data-termin>Termin anfragen</button>
+            <a class="btn btn--text btn--sm" href="tel:{{site.phoneHref}}"><svg class="i"><use href="#i-phone"/></svg>{{site.phone}}</a>
+          </div>
+        </div>
+      </div>
       <a class="icon-btn" href="tel:{{site.phoneHref}}" aria-label="Anrufen: {{site.phone}}"><svg class="i"><use href="#i-phone"/></svg></a>
       <button class="btn btn--yellow btn--sm header-cta" type="button" data-termin>
         <svg class="i"><use href="#i-calendar"/></svg><span>Termin anfragen</span>
@@ -46,6 +59,7 @@
     </nav>
     <div class="menu__aside">
       <p class="menu__status" data-status-long>Öffnungszeiten werden geladen …</p>
+      <div class="menu__hours">{{> hours}}</div>
       <button class="btn btn--yellow btn--block" type="button" data-termin><svg class="i"><use href="#i-calendar"/></svg>Termin anfragen</button>
       <div class="menu__contact">
         <a href="tel:{{site.phoneHref}}"><svg class="i"><use href="#i-phone"/></svg>{{site.phone}}</a>

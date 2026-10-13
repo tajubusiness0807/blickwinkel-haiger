@@ -1,15 +1,17 @@
 <section class="section section--paper2" id="kontakt" aria-labelledby="kontakt-title">
   <div class="container">
-    <div class="section-head section-head--split">
-      <div style="display:grid;gap:1rem">
-        <span class="eyebrow" data-reveal>Kontakt &amp; Anfahrt</span>
-        <h2 class="h2" id="kontakt-title" data-reveal style="--i:1">Wir freuen uns <em>auf Sie!</em></h2>
-      </div>
-      <p class="lead" data-reveal style="--i:2">Sie finden uns im Herzen von Haiger, direkt am Herkules-Center. Kommen Sie vorbei – oder vereinbaren Sie vorab Ihren Wunschtermin, damit wir uns ganz in Ruhe Zeit für Sie nehmen können.</p>
+    <div class="section-head">
+      <span class="eyebrow" data-reveal>Kontakt</span>
+      <h2 class="h2" id="kontakt-title" data-reveal style="--i:1">Öffnungszeiten &amp; Anfahrt</h2>
+      <p class="lead" data-reveal style="--i:2">Im Herzen von Haiger, direkt am Herkules-Center.</p>
     </div>
     <div class="contact">
-      <div class="contact-card" data-reveal>
+      <div class="contact-card" id="oeffnungszeiten" data-reveal>
         <p class="status-line" data-status-line><span class="status-pill__dot" aria-hidden="true"></span><span data-status-text>Öffnungszeiten</span></p>
+        <div class="contact-card__row">
+          <span class="contact-card__icon"><svg class="i"><use href="#i-clock"/></svg></span>
+          <div><p class="contact-card__label">Öffnungszeiten</p>{{> hours}}</div>
+        </div>
         <div class="contact-card__row">
           <span class="contact-card__icon"><svg class="i"><use href="#i-pin"/></svg></span>
           <div><p class="contact-card__label">Adresse</p><address><strong>{{site.name}}</strong><br>{{site.street}}<br>{{site.zip}} {{site.city}}</address></div>
@@ -17,10 +19,6 @@
         <div class="contact-card__row">
           <span class="contact-card__icon"><svg class="i"><use href="#i-phone"/></svg></span>
           <div><p class="contact-card__label">Telefon &amp; E-Mail</p><a href="tel:{{site.phoneHref}}">{{site.phone}}</a><br><a href="mailto:{{site.email}}">{{site.email}}</a></div>
-        </div>
-        <div class="contact-card__row">
-          <span class="contact-card__icon"><svg class="i"><use href="#i-clock"/></svg></span>
-          <div><p class="contact-card__label">Öffnungszeiten</p>{{> hours}}</div>
         </div>
         <div class="btn-row">
           <button class="btn btn--yellow" type="button" data-termin><svg class="i"><use href="#i-calendar"/></svg>Termin anfragen</button>

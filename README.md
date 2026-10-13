@@ -6,9 +6,10 @@ Inhalte, Texte und Bilder stammen von der bisherigen Website [blickwinkel-haiger
 ## Highlights
 
 - **Startseite als Erlebnis:** Ladenfoto, das zunächst unscharf ist und durch eine „Brille“ (folgt Maus bzw. Finger) scharf wird. Beim Scrollen wird das ganze Bild klar.
-- **Live-Öffnungsstatus:** „Jetzt geöffnet · bis 18:00 Uhr“, „Mittagspause“ usw. – inkl. hessischer Feiertage. Der heutige Tag ist in den Öffnungszeiten markiert.
+- **Live-Öffnungsstatus:** „Geöffnet bis 18:00“, „Mittagspause“ usw. – inkl. hessischer Feiertage. Ein Klick auf den Status im Header öffnet die Öffnungszeiten der ganzen Woche; der heutige Tag ist markiert.
 - **Termin-Dialog in 3 Schritten:** Anliegen → Wunschtag und Uhrzeit (nur echte Öffnungszeiten) → Kontaktdaten. Auf jeder Seite über „Termin anfragen“ erreichbar.
-- **Interaktive Elemente:** Sehanalyse-Schritte mit animiertem Auge, Seh-Simulator (Grauer Star, Glaukom, AMD …), Gesichtsform-Finder, Gleitsicht-Zonen, Glas-Extras, Tönungs-Finder für Sportbrillen, horizontaler Ladenrundgang mit Lightbox.
+- **Interaktive Elemente:** Sehanalyse-Schritte mit animiertem Auge, Seh-Simulator (Grauer Star, Glaukom, AMD …), Gesichtsform-Finder, Gleitsicht-Zonen, Glas-Extras, Tönungs-Finder für Sportbrillen, Ladenrundgang mit Lightbox.
+- **Kompakt:** kurze Texte, wenige klare Abschnitte, am Seitenende eine ruhige Kontaktleiste statt Werbe-Bannern.
 - **Kontaktlinsen nachbestellen** per Formular (Abholung oder Versand).
 - **Smartphone-optimiert:** eigene Schnellleiste (Anrufen · Termin · Route), Vollbild-Menü, Dialog als Vollbild-Ansicht.
 - **Datenschutzfreundlich:** Schriften selbst gehostet, keine Tracker, keine Cookies; Google Maps lädt erst nach Klick.
